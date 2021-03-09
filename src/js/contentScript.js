@@ -592,6 +592,15 @@ if (matchDomain('elmercurio.com')) {
     removeDOMElement(...advertising);
   }
 }
+else if (matchDomain('ilmessaggero.it')) {
+  const paywall = document.querySelector('#paywall_wrapper');
+  if (paywall) {
+    const premium = document.querySelector('div#premium')
+    removeDOMElement(paywall, premium);
+    const article = document.querySelector('.articolo');
+    article.style.overflow = "";
+  }
+}
 
 function matchDomain (domains) {
   const hostname = window.location.hostname;
